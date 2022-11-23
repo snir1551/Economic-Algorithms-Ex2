@@ -5,6 +5,14 @@ if __name__ == '__main__':
     d = search_state_space.state_space_search_BFS(a)
     print(d)
 
+    a = [[0, 0, 0],[0,0,0]]
+    d = search_state_space.state_space_search_BFS(a)
+    print(d)
+
+    a = [[1, 2, 3], [4, 5, 6]]
+    d = search_state_space.state_space_search_BFS(a)
+    print(d)
+
 
 
     #search_state_space.draw_tree(d)

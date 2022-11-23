@@ -9,6 +9,7 @@ def state_space_search_BFS(matrix: list[list]) -> dict:
     q_fifo.put([0] * len(matrix[0]))  # add to stack array with zero values
     count_states_deleted = 0  # number of states that deleted
     visit = set()  # for check if we visited
+    visit.add((0, 0, 0))
     index_object = 0  # index of object
     tree: Dict[int, list] = dict()  # dictionary that will contain the all combinations
     min_between_players = math.inf
@@ -37,9 +38,9 @@ def state_space_search_BFS(matrix: list[list]) -> dict:
             else:
                 tree.get(index_object).append(a.copy())  # if exists key, so append to dictionary
 
-            #print(a)
+            # print(a)
             if len(matrix) - 1 > index_object:  # If it's not the last level
-                print(len(matrix) - 1)
+                #print(len(matrix) - 1)
                 q_fifo.put(a.copy())
             else:  # If this is the last level
                 for player_value in range(len(matrix[0])):  # find the minimum among the players
